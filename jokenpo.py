@@ -71,10 +71,18 @@ while i < ro:
         pj = pj + 1
 
     elif v == 4:
+        sleep(1)
+        print('\033[1;32m-=-'*3,'Pontuação Final','-=-'*3)
+        print('| Pontuação do jogador {}: {}'.format(jogador, pj))
+        print('| Pontuação do Charlie: {}'.format(pm))
+        print('-=-'*11,)
+        sleep(1)
         print('\33[mCharlie: Poxa, que pena, foi um prazer te conhecer!')
         exit()
     sleep(1)
-    print('\033[1;32mPontuação do jogador {}: {}'.format(jogador, pj))
-    print('Pontuação do Charlie: {}'.format(pm))
+    print('\033[1;32m-=-'*11)
+    print('| Pontuação do jogador {}: {}'.format(jogador, pj))
+    print('| Pontuação do Charlie: {}'.format(pm))
+    print('-=-'*11)
     sleep(1)
     # -------------- Fim da rodada -------------- #
