@@ -1,5 +1,5 @@
-import random
-from time import sleep
+import random # --> Elementos randomicos
+from time import sleep # --> Elementos de espera
 r = 1  # --> Resposta de continuação
 pj = 0 # --> Pontuação do jogado
 pm = 0 # --> Pontuação da máquina (Charlie)
@@ -16,12 +16,12 @@ print('Bem-vindo ao Jokenpô, eu sou o Charlie :D')
 print('-=-'*20)
 
 sleep(2)
-jogador = input('Como posso te chamar?')
+jogador = input('Como posso te chamar?') # --> Nome do jogador
 sleep(1)
-print('Charlie: Conforme formos jogando, sua pontuação aparecerá em \033[1;32mVERDE')
+print('Charlie: Olá {} Conforme formos jogando, sua pontuação aparecerá em \033[1;32mVERDE'.format(jogador))
 sleep(1)
 # -------------- Fim do cabeçalho -------------- #
-print('\033[1;33mPin: Vamos comçar?')
+print('\033[1;33mCharlie: Vamos comçar?')
 
 r = int(input('[ 1 ] - SIM\n[ 2 ] - Não'))
 
@@ -37,13 +37,12 @@ else:
 # -------------- Inicio da rodada -------------- #
 while i < ro:
     i = i+1
-    e=random.choice(jogada)
+    e=random.choice(jogada) # --> Escolha da máquina
     print('''\033[mEscolha uma das opções:
     [ 1 ] - Pedra
     [ 2 ] - Papel
     [ 3 ] - Tesoura
     \033[0;31m[ 4 ] - Sair do jogo\033[m''')
-    print(e)
     v = int(input())
     sleep(1)
 
