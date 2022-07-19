@@ -1,6 +1,4 @@
-from ast import Try
-import random
-from re import A # --> Elementos randomicos
+import random # --> Elementos randomicos
 from time import sleep # --> Elementos de espera
 r = 1  # --> Resposta de continuação
 pj = 0 # --> Pontuação do jogado
