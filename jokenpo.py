@@ -1,5 +1,6 @@
 from ast import Try
-import random # --> Elementos randomicos
+import random
+from re import A # --> Elementos randomicos
 from time import sleep # --> Elementos de espera
 r = 1  # --> Resposta de continuação
 pj = 0 # --> Pontuação do jogado
@@ -19,19 +20,20 @@ print('-=-'*20)
 sleep(2)
 jogador = input('Como posso te chamar? ').strip() # --> Nome do jogador
 sleep(1)
-print('Charlie: Olá {} Conforme formos jogando, sua pontuação aparecerá em \033[1;32mVERDE'.format(jogador))
+print(f'Charlie: Olá {jogador} Conforme formos jogando, sua pontuação aparecerá em \033[1;32mVERDE')
 sleep(1)
 # -------------- Fim do cabeçalho -------------- #
 print('\033[1;33mCharlie: Vamos começar?')
 
 try:
-    r = int(input('[ 1 ] - SIM\n[ 2 ] - Não\n')).strip()
+    r = int(input('[ 1 ] - SIM\n[ 2 ] - Não\n'))
 except:
     r = 3
+
 sleep(1)
 if r == 1:
-    print('\033[1;32mPontuação do jogador {}: {}'.format(jogador,pj))
-    print('Pontuação do Charlie: {}'.format(pm))
+    print(f'\033[1;32mPontuação do jogador {jogador}: {pj}')
+    print(f'Pontuação do Charlie: {pm}')
 elif r == 2:
     print('\33[mPoxa, que pena, foi um prazer te conhecer!')
     exit()
@@ -50,6 +52,14 @@ while i < ro:
     [ 3 ] - Tesoura
     \033[0;31m[ 4 ] - Sair do jogo\033[m''')
     v = int(input())
+    while v not in (1,2,3,4):
+        print('Opção inválida.')
+        print('''\033[mEscolha uma das opções:
+        [ 1 ] - Pedra
+        [ 2 ] - Papel
+        [ 3 ] - Tesoura
+        \033[0;31m[ 4 ] - Sair do jogo\033[m''')
+        v = int(input())
     sleep(1)
     print('\033[1;33mJo')
     sleep(1)
@@ -58,7 +68,7 @@ while i < ro:
     print('Pô\033[m')
 
     if v == e:
-        print('Charlie: Nós escolhemos a mesma opção. Ninguém ganhou!!'.format(v))
+        print('Charlie: Nós escolhemos a mesma opção. Ninguém ganhou!!')
     elif v == 1 and e == 2:
         print('Charlie: Escolhi \033[34mPapel,\033[m e você escolheu \033[34mPedra.\033[1;31m Você perdeu!! haha\033[m')
         pm = pm + 1
@@ -78,16 +88,17 @@ while i < ro:
     elif v == 4:
         sleep(1)
         print('\033[1;32m-=-'*3,'Pontuação Final','-=-'*3)
-        print('| Pontuação do jogador {}: {}'.format(jogador, pj))
-        print('| Pontuação do Charlie: {}'.format(pm))
+        print(f'| Pontuação do jogador {jogador}: {pj}')
+        print(f'| Pontuação do Charlie: {pm}')
         print('-=-'*11,)
         sleep(1)
         print('\33[mCharlie: Poxa, que pena, foi um prazer te conhecer!')
         exit()
+
     sleep(1)
     print('\033[1;32m-=-'*11)
-    print('| Pontuação do jogador {}: {}'.format(jogador, pj))
-    print('| Pontuação do Charlie: {}'.format(pm))
+    print(f'| Pontuação do jogador {jogador}: {pj}')
+    print(f'| Pontuação do Charlie: {pm}')
     print('-=-'*11)
     sleep(1)
     # -------------- Fim da rodada -------------- #
