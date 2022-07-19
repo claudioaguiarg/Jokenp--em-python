@@ -17,7 +17,7 @@ print('Bem-vindo ao Jokenpô, eu sou o Charlie :D')
 print('-=-'*20)
 
 sleep(2)
-jogador = input('Como posso te chamar? ') # --> Nome do jogador
+jogador = input('Como posso te chamar? ').strip() # --> Nome do jogador
 sleep(1)
 print('Charlie: Olá {} Conforme formos jogando, sua pontuação aparecerá em \033[1;32mVERDE'.format(jogador))
 sleep(1)
@@ -25,7 +25,7 @@ sleep(1)
 print('\033[1;33mCharlie: Vamos começar?')
 
 try:
-    r = int(input('[ 1 ] - SIM\n[ 2 ] - Não\n'))
+    r = int(input('[ 1 ] - SIM\n[ 2 ] - Não\n')).strip()
 except:
     r = 3
 sleep(1)
@@ -51,6 +51,11 @@ while i < ro:
     \033[0;31m[ 4 ] - Sair do jogo\033[m''')
     v = int(input())
     sleep(1)
+    print('\033[1;33mJo')
+    sleep(1)
+    print('Ken')
+    sleep(1)
+    print('Pô\033[m')
 
     if v == e:
         print('Charlie: Nós escolhemos a mesma opção. Ninguém ganhou!!'.format(v))
