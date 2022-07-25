@@ -5,7 +5,6 @@ pj = 0 # --> Pontuação do jogado
 pm = 0 # --> Pontuação da máquina (Charlie)
 i= 1   # --> Controlador de rodada
 ro=10  # --> Controlador base de rodada
-jogada=[1,2,3] # --> Objetos de escolha
 v = 1  # --> Escolha de objetos
 
 # -------------- Inicio do cabeçalho -------------- #
@@ -43,7 +42,7 @@ sleep(2)
 # -------------- Inicio da rodada -------------- #
 while i < ro:
     i = i+1
-    e=random.choice(jogada) # --> Escolha da máquina
+    e=random.randint(1,3) # --> Escolha da máquina
     print('''\033[mEscolha uma das opções:
     [ 1 ] - Pedra
     [ 2 ] - Papel
@@ -69,19 +68,22 @@ while i < ro:
         print('Charlie: Nós escolhemos a mesma opção. Ninguém ganhou!!')
     elif v == 1 and e == 2:
         print('Charlie: Escolhi \033[34mPapel,\033[m e você escolheu \033[34mPedra.\033[1;31m Você perdeu!! haha\033[m')
-        pm = pm + 1
+        pm += 1
     elif v == 1 and e == 3:
         print('Charlie: Eu escolhi \033[34mTesoura, \033[mVocê escolheu \033[34mPedra. \033[1;35mVocê Ganhou! :(\033[m')
-        pj = pj + 1
+        pj += 1
     elif v == 2 and e == 1:
         print('Charlie: Eu escolhi \033[34mPedra, \033[mVocê escolheu \033[34mPapel. \033[1;35mVocê Ganhou! :(\033[m')
-        pj = pj + 1
+        pj += 1
+    elif v == 2 and e == 3:
+        print('Charlie: Eu escolhi \033[34mTesoura, \033[mVocê escolheu \033[34mPapel.\033[1;31m Você perdeu!! haha\033[m')
+        pm += 1
     elif v == 3 and e == 1:
         print('Charlie: Escolhi \033[34mPedra,\033[m e você escolheu \033[34mTesoura.\033[1;31m Você perdeu!! haha\033[m')
-        pm = pm + 1
+        pm += 1
     elif v == 3 and e == 2:
         print('Charlie: Eu escolhi \033[34mPapel, \033[mVocê escolheu \033[34mTesoura. \033[1;35m Você Ganhou! :(\033[m')
-        pj = pj + 1
+        pj += 1
 
     elif v == 4:
         sleep(1)
