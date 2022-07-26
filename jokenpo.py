@@ -9,11 +9,8 @@ v = 1  # --> Escolha de objetos
 
 # -------------- Inicio do cabeçalho -------------- #
 print('-=-'*20)
-
 print('Bem-vindo ao Jokenpô, eu sou o Charlie :D')
-
 print('-=-'*20)
-
 sleep(2)
 jogador = input('Como posso te chamar? ').strip() # --> Nome do jogador
 sleep(1)
